@@ -1,3 +1,5 @@
+package Personagens;
+
 public abstract class Personagem {
     private String nome;
     private int vida;
@@ -73,5 +75,6 @@ public abstract class Personagem {
         System.out.println("Vida: " + getVida());
         System.out.println("Especialidade: " + getEspecialidade());
     }
+
 
 }

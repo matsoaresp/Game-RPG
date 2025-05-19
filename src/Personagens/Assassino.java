@@ -1,3 +1,5 @@
+package Personagens;
+
 public class Assassino extends Personagem {
 
 
