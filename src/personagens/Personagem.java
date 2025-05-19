@@ -1,4 +1,4 @@
-package Personagens;
+package personagens;
 
 public abstract class Personagem {
     private String nome;
@@ -75,6 +75,7 @@ public abstract class Personagem {
         System.out.println("Vida: " + getVida());
         System.out.println("Especialidade: " + getEspecialidade());
     }
+
 
 
 }
