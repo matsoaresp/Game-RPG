@@ -58,19 +58,43 @@ public class CriacaoPersonagem {
                         "║             CRIE SEU PERSONAGEM            ║\n" +
                         "╠════════════════════════════════════════════╣\n" +
                         "║  1.🧙 M A G O                              ║\n" +
-                        "║      (∩｀-´)⊃━☆ﾟ.*･｡                       ║\n" +
+                        "║      (∩｀-´)⊃━☆ﾟ.*･｡                        ║\n" +
                         "║      Domina os elementos da natureza       ║\n" +
+                        "║                                            ║\n" +
+                        "║  CARACTERÍSTICAS:                          ║\n" +
+                        "║  • Vida: 100                               ║\n" +
+                        "║  • Habilidade: Soltar Magia                ║\n" +
+                        "║  • Descrição: Nascido com aptidão ao       ║\n" +
+                        "║    conhecimento, aos estudos das práticas  ║\n" +
+                        "║    arcanas e ao descobrimento do           ║\n" +
+                        "║    desconhecido.                           ║\n" +
+                        "║  • Altura: 1,75                            ║\n" +
                         "╠════════════════════════════════════════════╣\n" +
                         "║  2. 🗡️ A S S A S S I N O                   ║\n" +
                         "║      (⌐■_■)  ─╼                            ║\n" +
                         "║      Silencioso e letal com a lâmina       ║\n" +
+                        "║                                            ║\n" +
+                        "║  CARACTERÍSTICAS:                          ║\n" +
+                        "║  • Vida: 150                               ║\n" +
+                        "║  • Habilidade: Ataques furtivos            ║\n" +
+                        "║  • Descrição: Treinado para eliminar alvos ║\n" +
+                        "║    com precisão e agir nas sombras.        ║\n" +
+                        "║  • Altura: 1,80                            ║\n" +
                         "╠════════════════════════════════════════════╣\n" +
                         "║  3. 🛡️ G U E R R E I R O                   ║\n" +
                         "║      o==[::::::::::::>                     ║\n" +
                         "║      Defensor da honra                     ║\n" +
+                        "║                                            ║\n" +
+                        "║  CARACTERÍSTICAS:                          ║\n" +
+                        "║  • Vida: 200                               ║\n" +
+                        "║  • Habilidade: Combate físico              ║\n" +
+                        "║  • Descrição: Combatente resistente e      ║\n" +
+                        "║    habilidoso em lutas corpo a corpo,      ║\n" +
+                        "║    mestre em armas e armaduras.            ║\n" +
+                        "║  • Altura: 2,10                            ║\n" +
                         "╠════════════════════════════════════════════╣\n" +
                         "║  4. 👀 Personagens do jogo                 ║\n" +
-                        "║  0. 🚪 Sair do menu de criação             ║\n" +
+                        "║  0. 🚪 Iniciar o jogo                      ║\n" +
                         "╚════════════════════════════════════════════╝\n" +
                         "\nEscolha sua classe (0-4): "
         );
