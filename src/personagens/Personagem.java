@@ -8,7 +8,6 @@ public abstract class Personagem {
     private String altura;
     private String sexo;
 
-
     public Personagem(String nome, int vida, String especialidade, String descricao, String altura, String sexo) {
         this.nome = nome;
         this.vida = vida;
@@ -16,11 +15,18 @@ public abstract class Personagem {
         this.descricao = descricao;
         this.altura = altura;
         this.sexo = sexo;
-
     }
 
     public String getNome() {
         return nome;
+    }
+
+    public int getVida() {
+        return vida;
+    }
+
+    public String getEspecialidade() {
+        return especialidade;
     }
 
     public String getDescricao() {
@@ -39,6 +45,14 @@ public abstract class Personagem {
         this.nome = nome;
     }
 
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
+    }
+
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
@@ -51,31 +65,13 @@ public abstract class Personagem {
         this.sexo = sexo;
     }
 
-    public int getVida() {
-        return vida;
-    }
-
-    public void setVida(int vida) {
-        this.vida = vida;
-    }
-
-    public String getEspecialidade() {
-        return especialidade;
-    }
-
-    public void setEspecialidade(String especialidade) {
-        this.especialidade = especialidade;
-    }
-
     public void imprimePersonagem() {
         System.out.println("Nome: " + getNome());
-        System.out.println("Descrição: " + getDescricao());
         System.out.println("Altura: " + getAltura());
-        System.out.println("Sexo: " + getSexo());
         System.out.println("Vida: " + getVida());
         System.out.println("Especialidade: " + getEspecialidade());
+        System.out.println("Descrição: " + getDescricao());
     }
-
-
-
 }
+
+

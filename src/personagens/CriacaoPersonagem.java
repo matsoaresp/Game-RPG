@@ -11,6 +11,12 @@ public class CriacaoPersonagem {
         this.personagens = new ArrayList<>();
     }
 
+    public CriacaoPersonagem(List<Personagem> listaPersonagens) {
+        this.personagens = listaPersonagens;
+    }
+
+
+
     public void adicionarPersonagem(int tipo) {
         Personagem novoPersonagem = criarPersonagem(tipo);
         if (novoPersonagem != null) {
@@ -18,13 +24,34 @@ public class CriacaoPersonagem {
             System.out.println("Personagem criado com sucesso!");
         }
     }
+    private String sexoPersonagem (String sexo) {
+        if (sexo.equalsIgnoreCase("Masculino")) {
+            return "Homem";
+        }else if (sexo.equalsIgnoreCase("Feminino")) {
+            return "Mulher";
+        } else {
+            return "Outro/Não informado";
+        }
+    }
 
     public Personagem criarPersonagem(int tipo) {
         Scanner sc = new Scanner(System.in);
+
         System.out.println("Digite o nome do personagem: ");
-        String nome = sc.nextLine();
-        System.out.println("Digite o sexo do personagem: ");
-        String sexo = sc.nextLine();
+        String nome = sc.nextLine().trim();
+
+        if (nome.isEmpty()) {
+            System.out.println("Erro: nome não pode estar em branco!");
+            return null;
+        }
+
+        System.out.println("Digite o sexo do personagem (Masculino/Feminino): ");
+        String sexo = sc.nextLine().trim();
+
+        if (sexo.isEmpty()) {
+            System.out.println("Erro: sexo não pode estar em branco!");
+            return null;
+        }
 
         switch (tipo) {
             case 1:
@@ -39,6 +66,7 @@ public class CriacaoPersonagem {
         }
     }
 
+
     public void listarPersonagens() {
         if (personagens.isEmpty()) {
             System.out.println("Nenhum personagem cadastrado");
@@ -48,7 +76,9 @@ public class CriacaoPersonagem {
         System.out.println("\n=== PERSONAGENS DO JOGO ===");
         for (Personagem p : personagens) {
             p.imprimePersonagem();
+            System.out.println("Gênero: " + sexoPersonagem(p.getSexo()));
             System.out.println("------------");
+
         }
     }
 
