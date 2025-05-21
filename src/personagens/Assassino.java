@@ -6,9 +6,10 @@ public class Assassino extends Personagem {
         super(
                 nome,
                 150,
-                "Ataques furtivos",
+                150,
                 "Treinado para eliminar alvos com precisão e agir nas sombras.",
-                "1,20",
+                "dsds",
+                "1,80",
                 sexo
         );
     }

@@ -7,7 +7,8 @@ public class Guerreiro extends Personagem {
         super(
                 nome,
                 200,
-                "Combate físico",
+                150,
+                "Soltar magia",
                 "Combatente resistente e habilidoso em lutas corpo a corpo, mestre em armas e armaduras.",
                 "2,10",
                 sexo

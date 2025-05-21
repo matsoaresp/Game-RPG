@@ -26,20 +26,28 @@ public class Main {
             if (heroi.getVida() > 0) {
                 Historia.segundaMissao(heroi);
                 esperarEnter(scanner);
+
+
             }
 
             if (heroi.getVida() > 0) {
                 Historia.terceiraMissao(heroi);
                 esperarEnter(scanner);
+
+
             }
 
             if (heroi.getVida() > 0) {
                 Historia.quartaMissao(heroi);
                 esperarEnter(scanner);
+
+
             }
 
             if (heroi.getVida() > 0) {
+                Historia.resetarVida();
                 Historia.quintaMissao(heroi);
+
             }
 
         } else {

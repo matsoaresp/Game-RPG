@@ -3,18 +3,29 @@ package personagens;
 public abstract class Personagem {
     private String nome;
     private int vida;
+    private int vidaExtra;
     private String especialidade;
     private String descricao;
     private String altura;
     private String sexo;
 
-    public Personagem(String nome, int vida, String especialidade, String descricao, String altura, String sexo) {
+    public Personagem(String nome, int vida, int vidaExtra, String especialidade, String descricao, String altura,String sexo) {
         this.nome = nome;
         this.vida = vida;
+        this.vidaExtra = vidaExtra;
         this.especialidade = especialidade;
         this.descricao = descricao;
         this.altura = altura;
         this.sexo = sexo;
+    }
+
+
+    public int getVidaExtra() {
+        return vidaExtra;
+    }
+
+    public void setVidaExtra(int vidaExtra) {
+        this.vidaExtra = vidaExtra;
     }
 
     public String getNome() {
@@ -41,29 +52,11 @@ public abstract class Personagem {
         return sexo;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 
     public void setVida(int vida) {
         this.vida = vida;
     }
 
-    public void setEspecialidade(String especialidade) {
-        this.especialidade = especialidade;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public void setAltura(String altura) {
-        this.altura = altura;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
 
     public void imprimePersonagem() {
         System.out.println("Nome: " + getNome());

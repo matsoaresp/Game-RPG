@@ -35,6 +35,7 @@ public class Historia {
 
     public static void mensagemDeSucesso() {
         System.out.println("\n🏆 Missão Concluída!");
+        System.out.println("Parabéns você ganhou vida extra!");
         System.out.println("Você superou todos os desafios com coragem e sabedoria!");
         System.out.println("Recompensas adquiridas e experiência aumentada!\n");
     }
@@ -46,7 +47,7 @@ public class Historia {
     }
 
     private static int gerarDanoAleatorio(int danoBase) {
-        int variacao = random.nextInt(21) - 10;
+        int variacao = random.nextInt(5) - 15;
         return Math.max(0, danoBase + variacao);
     }
 
@@ -57,35 +58,42 @@ public class Historia {
         int danoReal = gerarDanoAleatorio(danoBase);
         jogador.setVida(jogador.getVida() - danoReal);
         System.out.println("Você recebeu " + danoReal + " de dano.");
-        System.out.println("Vida restante: " + jogador.getVida());
+        System.out.println("Vida: " + jogador.getVida());
 
         if (jogador.getVida() > 0) {
             mensagemDeSucesso();
+
         } else {
             mensagemDeFracasso();
         }
+
+
+    }
+
+    public static void resetarVida(){
+        jogador.setVida(100);
     }
 
     public static void primeiraMissao(Personagem jogador) {
         Historia.jogador = jogador;
         System.out.println("\n[VILAREJO DE AURION]");
         System.out.println("Aldeão: \"Salve-nos, " + jogador.getNome() + "! Lobos das Trevas atacam nossa vila!\"");
-        executarMissao("Defender o vilarejo de Aurion", jogador, 60);
+        executarMissao("Defender o vilarejo de Aurion", jogador, 20);
     }
 
     public static void segundaMissao(Personagem jogador) {
-        executarMissao("Explorar as ruínas antigas em busca da Relíquia Perdida", jogador, 20);
+        executarMissao("Explorar as ruínas antigas em busca da Relíquia Perdida", jogador, 30);
     }
 
     public static void terceiraMissao(Personagem jogador) {
-        executarMissao("Enfrentar os bandidos nas montanhas de Gorgoth", jogador, 30);
+        executarMissao("Enfrentar os bandidos nas montanhas de Gorgoth", jogador, 40);
     }
 
     public static void quartaMissao(Personagem jogador) {
-        executarMissao("Desvendar o Labirinto do Caos", jogador, 40);
+        executarMissao("Desvendar o Labirinto do Caos", jogador, 50);
     }
 
     public static void quintaMissao(Personagem jogador) {
-        executarMissao("Combater Korvath, o Lorde das Trevas", jogador, 50);
+        executarMissao("Combater Korvath, o Lorde das Trevas", jogador, 70);
     }
 }

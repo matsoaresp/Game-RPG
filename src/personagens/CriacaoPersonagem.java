@@ -7,14 +7,10 @@ import java.util.Scanner;
 public class CriacaoPersonagem {
     private List<Personagem> personagens;
 
-    public CriacaoPersonagem() {
-        this.personagens = new ArrayList<>();
-    }
 
     public CriacaoPersonagem(List<Personagem> listaPersonagens) {
         this.personagens = listaPersonagens;
     }
-
 
 
     public void adicionarPersonagem(int tipo) {
@@ -24,10 +20,11 @@ public class CriacaoPersonagem {
             System.out.println("Personagem criado com sucesso!");
         }
     }
-    private String sexoPersonagem (String sexo) {
+
+    private String sexoPersonagem(String sexo) {
         if (sexo.equalsIgnoreCase("Masculino")) {
             return "Homem";
-        }else if (sexo.equalsIgnoreCase("Feminino")) {
+        } else if (sexo.equalsIgnoreCase("Feminino")) {
             return "Mulher";
         } else {
             return "Outro/Não informado";
