@@ -35,7 +35,6 @@ public class Historia {
 
     public static void mensagemDeSucesso() {
         System.out.println("\n🏆 Missão Concluída!");
-        System.out.println("Parabéns você ganhou vida extra!");
         System.out.println("Você superou todos os desafios com coragem e sabedoria!");
         System.out.println("Recompensas adquiridas e experiência aumentada!\n");
     }
@@ -47,31 +46,31 @@ public class Historia {
     }
 
     private static int gerarDanoAleatorio(int danoBase) {
-        int variacao = random.nextInt(5) - 15;
+        int variacao = random.nextInt(31) - 15;
         return Math.max(0, danoBase + variacao);
     }
 
     public static void executarMissao(String descricaoMissao, Personagem jogador, int danoBase) {
         System.out.println("\n📜 MISSÃO: " + descricaoMissao);
         System.out.println("Você enfrenta perigos e desafios...");
-
+        System.out.println("Vida atual: " + jogador.getVida());
         int danoReal = gerarDanoAleatorio(danoBase);
         jogador.setVida(jogador.getVida() - danoReal);
+
         System.out.println("Você recebeu " + danoReal + " de dano.");
-        System.out.println("Vida: " + jogador.getVida());
+        System.out.println("Vida restante: " + jogador.getVida());
 
         if (jogador.getVida() > 0) {
             mensagemDeSucesso();
-
         } else {
             mensagemDeFracasso();
         }
-
-
     }
 
-    public static void resetarVida(){
-        jogador.setVida(100);
+    public static void resetarVida() {
+        int novaVida = jogador.getVida() + jogador.getVidaExtra();
+        jogador.setVida(Math.min(novaVida, 100));
+        System.out.println("\n✨ Vida restaurada! Vida atual: " + jogador.getVida());
     }
 
     public static void primeiraMissao(Personagem jogador) {
@@ -90,7 +89,7 @@ public class Historia {
     }
 
     public static void quartaMissao(Personagem jogador) {
-        executarMissao("Desvendar o Labirinto do Caos", jogador, 50);
+        executarMissao("Desvendar o Labirinto do Caos", jogador, 55);
     }
 
     public static void quintaMissao(Personagem jogador) {

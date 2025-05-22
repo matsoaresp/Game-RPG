@@ -9,7 +9,7 @@ public abstract class Personagem {
     private String altura;
     private String sexo;
 
-    public Personagem(String nome, int vida, int vidaExtra, String especialidade, String descricao, String altura,String sexo) {
+    public Personagem(String nome, int vida, int vidaExtra, String especialidade, String descricao, String altura, String sexo) {
         this.nome = nome;
         this.vida = vida;
         this.vidaExtra = vidaExtra;
@@ -18,7 +18,6 @@ public abstract class Personagem {
         this.altura = altura;
         this.sexo = sexo;
     }
-
 
     public int getVidaExtra() {
         return vidaExtra;
@@ -52,19 +51,17 @@ public abstract class Personagem {
         return sexo;
     }
 
-
     public void setVida(int vida) {
         this.vida = vida;
     }
 
-
     public void imprimePersonagem() {
         System.out.println("Nome: " + getNome());
         System.out.println("Altura: " + getAltura());
+        System.out.println("Sexo: " + getSexo());
         System.out.println("Vida: " + getVida());
-        System.out.println("Especialidade: " + getEspecialidade());
+        System.out.println("Vida Extra: " + getVidaExtra());
+        System.out.println("Tipo: " + getEspecialidade()); // Tipo do personagem
         System.out.println("Descrição: " + getDescricao());
     }
 }
-
-

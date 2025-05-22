@@ -1,68 +1,63 @@
 package personagens;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class CriacaoPersonagem {
     private List<Personagem> personagens;
 
-
     public CriacaoPersonagem(List<Personagem> listaPersonagens) {
         this.personagens = listaPersonagens;
     }
 
+    public void escolherPersonagem() {
+        Scanner scanner = new Scanner(System.in);
+        int opcao = -1;
 
-    public void adicionarPersonagem(int tipo) {
-        Personagem novoPersonagem = criarPersonagem(tipo);
-        if (novoPersonagem != null) {
-            personagens.add(novoPersonagem);
-            System.out.println("Personagem criado com sucesso!");
+        while (true) {
+            opcaoPersonagem();
+
+            if (scanner.hasNextInt()) {
+                opcao = scanner.nextInt();
+                scanner.nextLine();
+
+                if (opcao == 0) {
+                    break;
+                } else if (opcao >= 1 && opcao <= 3) {
+                    criarPersonagem(opcao, scanner);
+                    break;
+                } else if (opcao == 4) {
+                    listarPersonagens();
+                } else {
+                    System.out.println("Opção inválida! Tente novamente.");
+                }
+            } else {
+                System.out.println("Digite apenas números!");
+                scanner.nextLine();
+            }
         }
     }
 
-    private String sexoPersonagem(String sexo) {
-        if (sexo.equalsIgnoreCase("Masculino")) {
-            return "Homem";
-        } else if (sexo.equalsIgnoreCase("Feminino")) {
-            return "Mulher";
-        } else {
-            return "Outro/Não informado";
-        }
-    }
+    private void criarPersonagem(int tipo, Scanner scanner) {
+        System.out.print("Digite o nome do personagem: ");
+        String nome = scanner.nextLine();
 
-    public Personagem criarPersonagem(int tipo) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Digite o nome do personagem: ");
-        String nome = sc.nextLine().trim();
-
-        if (nome.isEmpty()) {
-            System.out.println("Erro: nome não pode estar em branco!");
-            return null;
-        }
-
-        System.out.println("Digite o sexo do personagem (Masculino/Feminino): ");
-        String sexo = sc.nextLine().trim();
-
-        if (sexo.isEmpty()) {
-            System.out.println("Erro: sexo não pode estar em branco!");
-            return null;
-        }
+        System.out.print("Digite o sexo (Masculino/Feminino): ");
+        String sexo = scanner.nextLine();
 
         switch (tipo) {
             case 1:
-                return new Mago(nome, sexo);
+                personagens.add(new Mago(nome, sexo));
+                break;
             case 2:
-                return new Assassino(nome, sexo);
+                personagens.add(new Assassino(nome, sexo));
+                break;
             case 3:
-                return new Guerreiro(nome, sexo);
-            default:
-                System.out.println("Tipo inválido");
-                return null;
+                personagens.add(new Guerreiro(nome, sexo));
+                break;
         }
+        System.out.println("Personagem criado com sucesso!");
     }
-
 
     public void listarPersonagens() {
         if (personagens.isEmpty()) {
@@ -75,7 +70,16 @@ public class CriacaoPersonagem {
             p.imprimePersonagem();
             System.out.println("Gênero: " + sexoPersonagem(p.getSexo()));
             System.out.println("------------");
+        }
+    }
 
+    private String sexoPersonagem(String sexo) {
+        if (sexo.equalsIgnoreCase("Masculino")) {
+            return "Homem";
+        } else if (sexo.equalsIgnoreCase("Feminino")) {
+            return "Mulher";
+        } else {
+            return "Outro/Não informado";
         }
     }
 
@@ -119,39 +123,58 @@ public class CriacaoPersonagem {
                         "║    habilidoso em lutas corpo a corpo,      ║\n" +
                         "║    mestre em armas e armaduras.            ║\n" +
                         "║  • Altura: 2,10                            ║\n" +
-                        "╠════════════════════════════════════════════╣\n" +
-                        "║  4. 👀 Personagens do jogo                 ║\n" +
-                        "║  0. 🚪 Iniciar o jogo                      ║\n" +
-                        "╚════════════════════════════════════════════╝\n" +
-                        "\nEscolha sua classe (0-4): "
+                        "╚════════════════════════════════════════════╝\n"
+
         );
     }
+    public void escolherPersonagens() {
+        Scanner scanner = new Scanner(System.in);
 
-    public void escolherPersonagem() {
+        opcaoPersonagem();
 
-        Scanner sc = new Scanner(System.in);
-        int opcao;
-        do {
-            opcaoPersonagem();
-            opcao = sc.nextInt();
-            sc.nextLine();
-            switch (opcao) {
+        int opcao = -1;
+        boolean entradaValida = false;
 
-                case 1:
+        while (!entradaValida) {
 
-                case 2:
-
-                case 3:
-                    adicionarPersonagem(opcao);
-                case 4:
-                    listarPersonagens();
-                    break;
-                case 0:
-                    System.out.println("Saindo do menu de criação");
-                default:
-                    System.out.println("Opcão inválida tente novamente!");
+            if (scanner.hasNextInt()) {
+                opcao = scanner.nextInt();
+                scanner.nextLine();
+                switch (opcao) {
+                    case 1:
+                        personagens.add(new Guerreiro(
+                                "Thoran", 200, 30, "Guerreiro",
+                                "Combatente resistente e habilidoso em lutas corpo a corpo, mestre em armas e armaduras.",
+                                "2,10", "Masculino"
+                        ));
+                        entradaValida = true;
+                        break;
+                    case 2:
+                        personagens.add(new Mago(
+                                "Elandra", 100, 25, "Mago",
+                                "Nascido com aptidão ao conhecimento, aos estudos das práticas arcanas e ao descobrimento do desconhecido.",
+                                "1,75", "Feminino"
+                        ));
+                        entradaValida = true;
+                        break;
+                    case 3:
+                        personagens.add(new Assassino(
+                                "Kael", 150, 20, "Assassino",
+                                "Treinado para eliminar alvos com precisão e agir nas sombras.",
+                                "1,80", "Masculino"
+                        ));
+                        entradaValida = true;
+                        break;
+                    default:
+                        System.out.print("Opção inválida. Tente novamente: ");
+                        break;
+                }
+            } else {
+                System.out.print("Digite apenas números válidos (1, 2 ou 3): ");
+                scanner.nextLine();
             }
-        } while (opcao != 0);
-
+        }
     }
+
+
 }
