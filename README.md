@@ -30,9 +30,9 @@ O Reino de Altherion foi dominado pelas forças sombrias do Senhor das Cinzas. V
 
 Mas nem tudo está perdido...
 
-- **O Mago Eldros**, mestre dos feitiços elementais, busca vingança por seu clã perdido.
-- **A Assassina Nyra**, veloz e letal, luta para salvar sua irmã das garras da escuridão.
-- **O Guerreiro Tharok**, com sua espada ancestral, quer provar seu valor e libertar seu povo.
+- **O Mago Elandra**, mestre dos feitiços elementais, busca vingança por seu clã perdido.
+- **A Assassina Kael**, veloz e letal, luta para salvar sua irmã das garras da escuridão.
+- **O Guerreiro Thoran**, com sua espada ancestral, quer provar seu valor e libertar seu povo.
 
 Juntos, eles embarcam em uma jornada perigosa, cheia de escolhas morais, batalhas épicas e mistérios antigos.
 
