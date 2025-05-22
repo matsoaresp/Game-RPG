@@ -71,6 +71,6 @@ Juntos, eles embarcam em uma jornada perigosa, cheia de escolhas morais, batalha
 ---
 
 <p align="center">
-  Feito com ❤️ por [Seu Nome]
+  Feito com ❤️ por Mateus Soares Prado, Caio Renan de Lima Mendonça, Vitor Vital 
 </p>
 
